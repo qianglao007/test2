@@ -4,7 +4,7 @@ const app = express();
 app.get('/', (req, res) => {
     console.log('Hello world received a requestxxx.');
 
-    res.send(`Hello, Welcome to CloudBase!23333444`);
+    res.send(`Hello, Welcome to CloudBase!new test`);
 });
 
 
