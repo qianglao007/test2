@@ -10,7 +10,8 @@ app.get('/', (req, res) => {
     console.log('request url:', url);
     axios.post(url)
         .then(resp => {
-            res.send(resp)
+            console.log('get response:', resp);
+            res.send(resp);
         })
     // res.send(`Hello, Welcome to CloudBase!new test openid:${openid}`);
 });
