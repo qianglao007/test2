@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-    let openid = req.get('X-CloudBase-Request-Id');
+    console.log(req);
+    let openid = req.get('X-WX-OPENID');
     res.send(`Hello, Welcome to CloudBase!new test openid:${openid}`);
 });
 
