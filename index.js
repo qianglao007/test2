@@ -2,9 +2,8 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-    console.log('Hello world received a requestxxx2222.');
-
-    res.send(`Hello, Welcome to CloudBase!new test`);
+    let openid = req.get('X-WX-OPENID');
+    res.send(`Hello, Welcome to CloudBase!new test${openid}`);
 });
 
 
