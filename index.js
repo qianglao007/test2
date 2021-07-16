@@ -1,10 +1,15 @@
 const express = require('express');
+var fs = require('fs');
 const app = express();
 
 app.get('/', (req, res) => {
-    console.log(req);
+    let token = fs.readFileSync('./config.json').toString()
     let openid = req.get('X-WX-OPENID');
-    res.send(`Hello, Welcome to CloudBase!new test openid:${openid}`);
+    axios.post(`https://api.weixin.qq.com/wxa/getopendata?openid=${openid}&cloudbase_access_token=${token}`)
+        .then(resp => {
+            res.send(resp)
+        })
+    // res.send(`Hello, Welcome to CloudBase!new test openid:${openid}`);
 });
 
 
