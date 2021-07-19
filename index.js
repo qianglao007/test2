@@ -6,7 +6,7 @@ const app = express();
 app.get('/', (req, res) => {
     let token = fs.readFileSync('/.tencentcloudbase/wx/cloudbase_access_token').toString()
     let openid = req.get('X-WX-OPENID');
-    let url = `https://openapi-965928-1304825688.ap-shanghai.internal-run.tcloudbase.com/wxa/getwxadevinfo`;
+    let url = `http://openapi-965928-1304825688.ap-shanghai.internal-run.tcloudbase.com/wxa/getwxadevinfo`;
     console.log('request url:', url);
     axios.post(url)
         .then(resp => {
