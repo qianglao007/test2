@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
         .then(resp => {
             console.log('get response:', resp);
             // res.send(resp);
-            res.send(`Hello, Welcome to CloudBase!new test openid:${openid}`);
+            res.send(resp.data);
         })
     // res.send(`Hello, Welcome to CloudBase!new test openid:${openid}`);
 });
