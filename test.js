@@ -4,14 +4,12 @@ const axios = require('axios');
 const app = express();
 
 app.get('/', (req, res) => {
-    let token = fs.readFileSync('/.tencentcloudbase/wx/cloudbase_access_token').toString()
     let openid = req.get('X-WX-OPENID');
-    let url = `https://openapi-965928-1304825688.ap-shanghai.internal-run.tcloudbase.com/wxa/getwxadevinfo`;
-    console.log('request url:', url);
-    axios.post(url)
+    let url = `https://zstdev.qq.com/v1/platform/mini-program/home`;
+    axios.post(url, {})
         .then(resp => {
-            // res.send(resp);
-            res.send(resp.data);
+            console.log('get response:', resp);
+            res.send(resp);
         })
 });
 
@@ -20,3 +18,15 @@ const port = process.env.PORT || 80;
 app.listen(port, () => {
     console.log('listening on port', port);
 });
+
+
+// function test() {
+//     let obj1 = {
+//     };
+//     let obj2 = {
+//         b: obj1
+//     };
+//     obj1.a = obj2;
+//     console.log(obj1);
+// }
+// test();
